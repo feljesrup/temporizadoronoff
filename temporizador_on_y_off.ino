@@ -86,6 +86,15 @@ void loop() {
 //  digitalWrite(led_run,LOW);
   digitalWrite(led_activo,LOW);
   iniciar=0;
+   horasOn=EEPROM.read(0);
+  minutosOn=EEPROM.read(1);
+  segundosOn=EEPROM.read(2); 
+
+  horasOf=EEPROM.read(3);
+  minutosOf=EEPROM.read(4);
+  segundosOf=EEPROM.read(5);
+  imprimir_tiempo(0,horasOn,minutosOn,segundosOn);  
+  imprimir_tiempo(1,horasOf,minutosOf,segundosOf);
   }
   
   if(digitalRead(conf)==LOW)
